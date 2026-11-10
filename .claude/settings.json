@@ -1,0 +1,44 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "$CLAUDE_PROJECT_DIR/scripts/claude-session-start.sh" }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(scripts/verify.sh:*)",
+      "Bash(scripts/vendor-sync.sh check:*)",
+      "Bash(tools/vc.py status:*)",
+      "Bash(tools/vc.py check:*)",
+      "Bash(tools/vc.py new:*)",
+      "Bash(python3 tools/vc.py status:*)",
+      "Bash(python3 tools/vc.py check:*)",
+      "Bash(python3 -m unittest discover -s tools:*)",
+      "Bash(cargo verus verify:*)",
+      "Bash(cargo verus focus:*)",
+      "Bash(cargo test:*)",
+      "Bash(cargo build:*)"
+    ],
+    "ask": [
+      "Bash(tools/vc.py lock:*)",
+      "Bash(python3 tools/vc.py lock:*)",
+      "Bash(scripts/vendor-sync.sh update:*)"
+    ],
+    "deny": [
+      "Edit(/specs.lock.json)",
+      "Write(/specs.lock.json)",
+      "Edit(/vendored.toml)",
+      "Write(/vendored.toml)",
+      "Edit(/lib-security-property/**)",
+      "Write(/lib-security-property/**)",
+      "Edit(/intents/lib-security-property.md)",
+      "Write(/intents/lib-security-property.md)",
+      "Edit(/.claude/skills/security-property/**)",
+      "Write(/.claude/skills/security-property/**)"
+    ]
+  }
+}
