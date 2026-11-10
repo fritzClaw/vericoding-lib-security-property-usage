@@ -139,7 +139,7 @@ jobs:
           (cd dist && shasum -a 256 "$pkg.tar.gz" > SHA256SUMS && cat SHA256SUMS)
           echo "$bins" > dist/BINARIES
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: steps.bins.outputs.any == 'true'
         with:
           name: macos-arm64
