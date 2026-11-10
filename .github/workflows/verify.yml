@@ -24,13 +24,13 @@ jobs:
           fetch-depth: 0
 
       - name: Cache Verus release
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.verus
           key: verus-${{ runner.os }}-${{ hashFiles('verus-toolchain.env') }}
 
       - name: Cache cargo
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             ~/.cargo/registry
