@@ -1,0 +1,15 @@
+# Verified libraries vendored from upstream Vericoding repos.
+# Written by scripts/vendor-sync.sh; checked in CI (job "vendored libraries").
+# Never edit the vendored files by hand: change them upstream, then run
+#   scripts/vendor-sync.sh update <lib> <rev>
+
+[lib-security-property]
+repo = "https://github.com/fritzClaw/vericoding-kata"
+rev = "615797910b687d2f14d8cea0a71931cd3aaf8945"
+# Upstream path -> local path. The intent and the spec lock entry travel with
+# the code, so `tools/vc.py check` verifies the same frozen spec as upstream.
+files = [
+  ["lib-security-property", "lib-security-property"],
+  ["intents/lib-security-property.md", "intents/lib-security-property.md"],
+  ["lib-security-property/skill/SKILL.md", ".claude/skills/security-property/SKILL.md"],
+]

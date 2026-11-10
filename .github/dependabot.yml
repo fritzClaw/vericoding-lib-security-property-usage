@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # GitHub Actions only. Cargo is pinned on purpose: vstd must match the
+  # Verus release in verus-toolchain.env (bump all pins together, see README).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
