@@ -1,0 +1,23 @@
+[package]
+name = "find"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+
+[lib]
+name = "find"
+path = "src/lib.rs"
+
+[[bin]]
+name = "vfind"
+path = "src/main.rs"
+
+[dependencies]
+vstd.workspace = true
+security_property = { path = "../../lib-security-property" }
+
+[package.metadata.verus]
+verify = true
+
+[lints]
+workspace = true
